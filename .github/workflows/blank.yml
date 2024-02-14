@@ -29,16 +29,19 @@ jobs:
       - name: Run a multi-line script
         run: |
           sudo apt-get update
-          sudo apt-get install libguestfs-tools libntfs-3g
-          wget https://software.download.prss.microsoft.com/dbazure/Windows11_InsiderPreview_Client_ARM64_en-us_26040.VHDX?t=9abbee54-01c7-4ae0-9ea2-1a1e8a61af15&P1=1708000338&P2=601&P3=2&P4=1%2bgOR5Ft%2fLzIyE7fsbXNMHGo2%2bSXTOP7Zv4iVxXYwFdWKL6F9QPTg3xW29tfpyE7z3WDWFUGdwnVJFl%2fI8PyUs2YYy%2bx0vnS5MVsvcrHGKiShx0por0UD6nqHQhywQ5v%2fp3KFeeeEFwgJb8AzZZYiuje8VC7FtBgG5bwt5WEBvXZVt%2b2A7fOBEgATpSDTRAq9AdIurx%2b2PhsR7AXg183JxIV5gZ5PV%2b5TIZgEnj2z9QPF%2bLJhCwzVGw%2bquGWbcHujQEtvXjmFTpwpnfW3WnE8CNoHAUUCDoMfFqfSrl1J5z%2fQjokmYq60PzxnniU4fPj7DCVE84YDxM3TLyk0%2fJExQ%3d%3d
+          sudo apt-get install libguestfs-tools libfuse3-dev ntfs-3g-dev libfuse3 ntfs-3g
+
+    # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run:  curl --progress-bar --location --output "win.vhdx" --continue-at - --max-filesize 10G --fail --proto =https "--tlsv1.3" --http1.1 -- "https://software.download.prss.microsoft.com/dbazure/Windows11_InsiderPreview_Client_ARM64_en-us_26040.VHDX?t=9abbee54-01c7-4ae0-9ea2-1a1e8a61af15&P1=1708000338&P2=601&P3=2&P4=1%2bgOR5Ft%2fLzIyE7fsbXNMHGo2%2bSXTOP7Zv4iVxXYwFdWKL6F9QPTg3xW29tfpyE7z3WDWFUGdwnVJFl%2fI8PyUs2YYy%2bx0vnS5MVsvcrHGKiShx0por0UD6nqHQhywQ5v%2fp3KFeeeEFwgJb8AzZZYiuje8VC7FtBgG5bwt5WEBvXZVt%2b2A7fOBEgATpSDTRAq9AdIurx%2b2PhsR7AXg183JxIV5gZ5PV%2b5TIZgEnj2z9QPF%2bLJhCwzVGw%2bquGWbcHujQEtvXjmFTpwpnfW3WnE8CNoHAUUCDoMfFqfSrl1J5z%2fQjokmYq60PzxnniU4fPj7DCVE84YDxM3TLyk0%2fJExQ%3d%3d"
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
           wget https://wimlib.net/downloads/wimlib-1.14.3.tar.gz
           tar -xvzf wimlib-1.14.3.tar.gz
-          cd wimlib-1.14.3.tar.gz
-          configure
+          cd wimlib-1.14.3
+          ./configure
           make
           sudo make install
 
@@ -46,16 +49,15 @@ jobs:
       - name: Run a multi-line script
         run: |
          mkdir windows
-         guestmount --add Windows11_InsiderPreview_Client_ARM64_en-us_26040.VHDX --inspector --ro /windows
-         wimcapture /windows install.wim "Windows 11 ARM64_en-us_26040"
-
+         guestmount --add win.vhdx --inspector --ro /windows
+         wimcapture /windows install.wim "Windows 11 ARM64_en-us_26040" 
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
          name: upload
          path: |
-          install.win
+          install.wim
 
 
 
