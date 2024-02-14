@@ -49,15 +49,15 @@ jobs:
       - name: Run a multi-line script
         run: |
          mkdir windows
-         sudo guestmount --add win.vhdx --inspector --ro /windows
-         wimcapture /windows install.wim "Windows 11 ARM64_en-us_26040" 
+         sudo guestmount --add /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/win.vhdx --inspector --ro /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/windows
+         wimcapture /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/windows /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/install.wim "Windows 11 ARM64_en-us_26040" 
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
          name: upload
          path: |
-          install.wim
+          /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/install.wim
 
 
 
