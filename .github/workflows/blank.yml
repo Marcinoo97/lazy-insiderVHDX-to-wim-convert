@@ -54,6 +54,7 @@ jobs:
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
+          automatic_release_tag: "latest"
           title: WIM arm64 26040 
           files: |
            /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/install.wim
