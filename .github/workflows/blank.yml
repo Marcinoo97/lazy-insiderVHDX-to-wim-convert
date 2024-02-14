@@ -29,7 +29,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           sudo apt-get update
-          sudo apt-get install libguestfs-tools libfuse3-dev ntfs-3g-dev ntfs-3g
+          sudo apt-get install libguestfs-tools libfuse3-dev ntfs-3g-dev ntfs-3g wimtools
 
     # Runs a set of commands using the runners shell
       - name: Run a multi-line script
@@ -49,7 +49,7 @@ jobs:
       - name: Run a multi-line script
         run: |
          mkdir windows
-         guestmount --add win.vhdx --inspector --ro /windows
+         sudo guestmount --add win.vhdx --inspector --ro /windows
          wimcapture /windows install.wim "Windows 11 ARM64_en-us_26040" 
 
       - name: Upload artifacts
