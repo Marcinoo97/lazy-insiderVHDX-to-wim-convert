@@ -40,7 +40,7 @@ jobs:
         run: |
          mkdir windows
          sudo guestmount --add /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/win.vhdx --inspector --ro /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/windows
-         sudo wimlib-imagex capture /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/windows /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/install.wim "Windows 11 ARM64_en-us_26040" --compress=100
+         sudo wimlib-imagex capture /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/windows /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/install.wim "Windows 11 ARM64_en-us_26040" --compress=recovery
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
