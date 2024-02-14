@@ -29,7 +29,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           sudo apt-get update
-          sudo apt-get install libguestfs-tools libfuse3-dev ntfs-3g-dev ntfs-3g wimtools
+          sudo apt-get install libguestfs-tools ntfs-3g wimtools
 
     # Runs a set of commands using the runners shell
       - name: Run a multi-line script
@@ -38,19 +38,9 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          wget https://wimlib.net/downloads/wimlib-1.14.3.tar.gz
-          tar -xvzf wimlib-1.14.3.tar.gz
-          cd wimlib-1.14.3
-          ./configure
-          make
-          sudo make install
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
          mkdir windows
          sudo guestmount --add /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/win.vhdx --inspector --ro /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/windows
-         sudo wimcapture /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/windows /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/install.wim "Windows 11 ARM64_en-us_26040" --compress=100
+         sudo wimlib-imagex /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/windows /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/install.wim "Windows 11 ARM64_en-us_26040" --compress=100
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
