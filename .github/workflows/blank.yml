@@ -39,12 +39,12 @@ jobs:
       - name: Run a multi-line script
         run: |
          mkdir windows
-         sudo guestmount --add /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/win.vhdx --inspector --ro /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/windows
-         sudo wimlib-imagex capture /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/windows /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/install.wim "Windows 11 ARM64_en-us_26058" --compress=recovery
+         sudo guestmount --add /home/ubuntu/actions-runner/_work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/win.vhdx --inspector --ro /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/windows
+         sudo wimlib-imagex capture /home/ubuntu/actions-runner/_work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/windows /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/install.wim "Windows 11 ARM64_en-us_26058" --compress=recovery
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
          name: upload
          path: |
-          /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/install.wim
+          /home/ubuntu/actions-runner/_work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/install.wim
