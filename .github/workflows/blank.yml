@@ -18,7 +18,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -33,7 +33,7 @@ jobs:
 
     # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-        run:  curl --progress-bar --location --output "win.vhdx" --continue-at - --max-filesize 10G --fail --proto =https "--tlsv1.3" --http1.1 -- "https://software.download.prss.microsoft.com/dbazure/Windows11_InsiderPreview_Client_ARM64_en-us_26058.VHDX?t=b1df606f-5050-4d9d-b06f-59a2a46ca960&P1=1708060771&P2=601&P3=2&P4=NZywLtszkf6i8e11i7UaxtQQXd1jLN7MD2VpKqK6SZpJv2fhK0b1e%2fKrxfqCYO0993iCI25%2fAxIs%2f2cg1k4QNRv%2b%2fFvYAUg8%2f3X0ccjYcgjBK7HRlt5166XrTPByJ8tyUOOoD7DdkOuvV61C6dxbX%2fi4%2bCygpiy5JK%2bPoqIbuDdLTwUc1%2b8W70T8nkRS4VasjhwBtHyFaY5mXd39TW%2bCC0WPedWiFGYRQEXa5%2fvdQqcVBvFaSJsI8PQYiK05%2f%2bed7AIKgpFdXiNTN0xk9o%2bJbSiNimzPGxPnnBBXgm9YIM5LoWVOCfnwTEtosHEwTFLQGhO%2blVXwVbk0O74aFE8M8g%3d%3d"
+        run:  curl --progress-bar --location --output "win.vhdx" --continue-at - --max-filesize 10G --fail --proto =https "--tlsv1.3" --http1.1 -- "https://software.download.prss.microsoft.com/dbazure/Windows11_InsiderPreview_Client_ARM64_en-us_26058.VHDX?t=1be7cfb6-b290-4fec-91a3-29c3dda100c7&P1=1708464309&P2=601&P3=2&P4=o%2ft4TiD%2fWQ5N4umY6YXIH8669H1h8GhGYjgCqYVOuIYHhXbz%2bu9at9Wqpu3lkjeaRwkxaU%2fYN%2bbHj6UvE%2bipxaehp4aFl83rNN0pfXtQ4aK%2fY8ZJ4Y5%2fk00xGik1xnfvZUaGaoS%2fsdkevrPX1miUUQJxPCAAQMCDVL5YWDuJ0Qtuchho3CBPUAntYKcYfTfNhLSDhGB8nSFZjEbC3jjqvloQjGSx6nMXoyFfY4WIS60k32%2b3CekrDfj1d9idBmZ773AxnF63fkwl9j9sr53DnAoYi5DzFR0jmAEuvv9UIz4CYt6dIIcAFohG9ctPK%2fla%2fGjGQnHWU65dBIWv9QcK8Q%3d%3d"
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
