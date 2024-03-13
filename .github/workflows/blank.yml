@@ -33,14 +33,14 @@ jobs:
 
     # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-        run:  curl --progress-bar --location --output "win.vhdx" --continue-at - --max-filesize 10G --fail --proto =https "--tlsv1.3" --http1.1 -- "https://software.download.prss.microsoft.com/dbazure/Windows11_InsiderPreview_Client_ARM64_en-us_26058.VHDX?t=1be7cfb6-b290-4fec-91a3-29c3dda100c7&P1=1708464309&P2=601&P3=2&P4=o%2ft4TiD%2fWQ5N4umY6YXIH8669H1h8GhGYjgCqYVOuIYHhXbz%2bu9at9Wqpu3lkjeaRwkxaU%2fYN%2bbHj6UvE%2bipxaehp4aFl83rNN0pfXtQ4aK%2fY8ZJ4Y5%2fk00xGik1xnfvZUaGaoS%2fsdkevrPX1miUUQJxPCAAQMCDVL5YWDuJ0Qtuchho3CBPUAntYKcYfTfNhLSDhGB8nSFZjEbC3jjqvloQjGSx6nMXoyFfY4WIS60k32%2b3CekrDfj1d9idBmZ773AxnF63fkwl9j9sr53DnAoYi5DzFR0jmAEuvv9UIz4CYt6dIIcAFohG9ctPK%2fla%2fGjGQnHWU65dBIWv9QcK8Q%3d%3d"
+        run:  curl --progress-bar --location --output "win.vhdx" --continue-at - --max-filesize 10G --fail --proto =https "--tlsv1.3" --http1.1 -- "https://secret.microsoft.com/w.vhdx"
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
          mkdir windows
          sudo guestmount --add /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/win.vhdx --inspector --ro /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/windows
-         sudo wimlib-imagex capture /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/windows /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/install.wim "Windows 11 ARM64_en-us_26058" --compress=lzms
+         sudo wimlib-imagex capture /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/windows /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/install.wim "Windows 11 ARM64_en-us_26080" --compress=lzms
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
