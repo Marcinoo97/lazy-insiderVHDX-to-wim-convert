@@ -33,7 +33,7 @@ jobs:
 
     # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-        run:  curl --progress-bar --location --output "win.vhdx" --continue-at - --max-filesize 19G --fail --proto =https "--tlsv1.3" --http1.1 -- "https://software.download.prss.microsoft.com/dbazure/Windows11_InsiderPreview_Client_ARM64_en-us_26080.VHDX?t=eac4f366-d0fb-4520-b3e1-2dfbe34d89c3&P1=1710440059&P2=601&P3=2&P4=D8PdH50XhlMh%2f0Yz0GGE2n1mqILM%2fHQ5D7VA07wTAde63k6al2ejmP3BRmZP8r5U91uIQScUvpxYQNiqGZUK8UWGh%2bIiDsHmuKY%2bQQfVnRac2TAUXA4zcNW%2fPsNDjUKN7nm51gmyEqsr7kXraCzz6zj5oAPOxYHKLKWRdzHbr0LNL601qszKgXXJFvWa%2f8%2f2AENqfqlz7QGiI%2bCB0poDKWheO60VQIGAODm0D6H3eaak%2bkNtdLsQrnhdnw3H4AZUR634R2quI5gJ1fdpzPBFQUib678gjV1gUr%2bvqmlhhbg2L4ps3NlbV9jpIih2mS3uGkBJ6oVzaobK%2f8aC1JpceQ%3d%3d"
+        run:  curl --progress-bar --location --output "win.vhdx" --continue-at - --max-filesize 19G --fail --proto =https "--tlsv1.3" --http1.1 -- "https://software.download.prss.microsoft.com/dbazure/Windows11_InsiderPreview_Client_ARM64_en-us_26080.VHDX?t=1411ae70-ed5c-4ab5-bfdd-17073a856740&P1=1711208244&P2=601&P3=2&P4=lQgSXMumgK%2bllVnJUdxDT2WMcqvWCI%2fpyn6G%2fdeHAt%2b2qMWkgN2hAYR2Qx4SO6KYSna1O%2bvZlj4oRd%2fGK7yorGR4QCkm6%2fcJmcKhNdr83b9YH5RlDWhX74KBhtwnHKDC0Vy3C9Yed9PJwt%2bl9WVCAC%2bRHzmbUAviKzqZYH078VBT2uDzPXENNBuMtFVVM%2ftmRFi%2bpIQji%2fM0UlTGnZqVNIsXZmsnPUOduTAlMBqSTOmTDWaV8GbC1r2xqjopJXa9RLvav8Gg0H8dXtO%2bp3PuPThQ67ggGBAml73ICrmv4U6hXcG4kmJ0AKhlBwINoN8ACTUHgEsZiTuWZbE0lPqr%2bg%3d%3d"
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
@@ -46,5 +46,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
          name: install.wim
-         path: /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/install.wim
-         compression-level: 0
+         path: /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/*.wim
