@@ -33,7 +33,7 @@ jobs:
 
     # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-        run:  curl --progress-bar --location --output "win.vhdx" --continue-at - --max-filesize 19G --fail --proto =https "--tlsv1.3" --http1.1 -- "https://software.download.prss.microsoft.com/dbazure/Windows11_InsiderPreview_Client_ARM64_en-us_26100.1150.VHDX?t=8fb846d6-7602-46f7-83b0-4b76f6a55354&P1=1723151707&P2=601&P3=2&P4=r62GEWzyJIkkNITsUgpVITEmMbKrbnKXtc0i5EpTQBJd3WHgYgEp3NTLmPkSC9fAYxWhqcKTkuY6N9HYimD94%2br1SF0b5NfOr3rVUnVv2%2b3JTCRk5weY6DPK28HFIxWARaYcLL5BP05RjDh0BQa%2fvlRCMC%2f%2bWDUCT4YCAtsJayzP1jFJHC5HGSsLRcvx%2fJQqIJ3mFo7fBOULZiA6Hz7aRdPUH4ted9E2PI5OjmLSEm4X7w6hNiGKQzHRw39LuN7f75mluMVFkC4kiwesLP1EEcyKQY8jO9JBkWBzfKF1uttxBoirwvmwzYvQKPXTAbsXFbGAL5MA8xs4YmK%2fZkQl6Q%3d%3d"
+        run:  curl --progress-bar --location --output "win.vhdx" --continue-at - --max-filesize 19G --fail --proto =https "--tlsv1.3" --http1.1 -- "https://software.download.prss.microsoft.com/dbazure/Windows11_InsiderPreview_Client_ARM64_en-us_27718.VHDX?t=4ceb2890-0553-4ab2-8a8c-c2ca5a47b4af&P1=1727976740&P2=601&P3=2&P4=ZmXXYoGADmqVl54E9NwdhQuO7Zb1sNe9igpOOWt7lv%2fA2eQ%2fIBhIzHTEAkmBbjhTzQFNRWauqvb5xXLnlhc3u9qDIBOkp2qyy%2beUXxS9det68GSDez5tv%2f4xK%2fF99f5mfBtTaudjKwh7FrQwME4OHz8el1k7oWVEnfhtHMNCk2E6Cb3y9CORqP4pSNgYGfBT8yvEzUsRsPuuEqCY0eqBzawpeSrLoBIES6G87fQKZcGAMPqGYAV8h4r1%2f6v7JLvailjnbgVXdziy4mfRMSUtNt9V0o8yHURp6Ek6dMklp0%2fezNwDe3sTygtBn8bqp%2b4%2fzVECRaOdRS1UWWKK0hNfvw%3d%3d"
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
