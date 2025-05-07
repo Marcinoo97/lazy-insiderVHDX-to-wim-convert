@@ -33,14 +33,14 @@ jobs:
 
     # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-        run:  curl --progress-bar --location --output "win.vhdx" --continue-at - --max-filesize 19G --fail --proto =https "--tlsv1.3" --http1.1 -- "https://software.download.prss.microsoft.com/dbazure/Windows11_InsiderPreview_Client_ARM64_en-us_27774.VHDX?t=79afc7ed-b8c8-4e8e-98bc-29874dea5725&P1=1737138472&P2=601&P3=2&P4=odfKws3kAVsfI5CwsRiOtc%2fJ6j%2b07kjwmkzGCKDX4QcNKNIJc5wKzxVuYgluUIDMFuOLfCgs64et72JVGxQFVc06cPpOreB7rdVzA%2byqaPW63L%2f3RGFqVprlagYdbVOrZSPfQ3wQaPnmGwiqd%2bJE6JK6%2be0h1t4ysoVtZHKkK5rkHLrPqP7iXR%2ffmGcbUYgw18hGKdR%2fMyCSN0qNgBzG6YLdCI%2f3Kmc7%2bkOBREuiGM9B3QgEmdLWgVYkOuEs6ezIqbNhIJptTSmp0wC0iJw%2f7kxmrVvsKwZobw9wzToOwhghIU7u66tdcCSGS7lVr4IQdCRp7%2bnxA3fFn%2fV67gvOHw%3d%3d"
+        run:  curl --progress-bar --location --output "win.vhdx" --continue-at - --max-filesize 19G --fail --proto =https "--tlsv1.3" --http1.1 -- "https://software.download.prss.microsoft.com/dbazure/Windows11_InsiderPreview_Client_ARM64_en-us_27842.VHDX?t=a09c806d-4662-4d99-a57a-0562dbbed5b3&P1=1746721033&P2=601&P3=2&P4=UJgXRNmsn3NuSof0mHu9dkwE1fM83ye9jebjROPrFw2uI2NQSVR6Miw48hByhYavdlaeDtpG2S4sq77Ix33R570m%2bZtZyDALHFJeFoDxiBlZFjD%2ftcMh5VY84nGvno41fUdZm9pKDk04lTSFVvEIA5Bq9bMJ0JgHMRvDv4sm6P01XNV5z00n%2b7QM866MS2Fn1%2f1lRlyOoEIzQQN7t2uDbKXvjDemn8LOEe9z7QjROCvwqUi%2bo2O35yc8CNcECJ8UUD07uwZZfar%2fyjIAz16JBIWrWa3MZ85SBTEs3efQuHD1isnTn0OKARDiK3fWUD0NpVDi%2brrNKix60cGGt27dQA%3d%3d"
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
          mkdir windows
          sudo guestmount --add /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/win.vhdx --inspector --ro /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/windows
-         sudo wimlib-imagex capture /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/windows /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/install.wim "Windows 11 ARM64_en-us 27774.1000 Canary" --compress=lzms
+         sudo wimlib-imagex capture /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/windows /home/runner/work/lazy-insiderVHDX-to-wim-convert/lazy-insiderVHDX-to-wim-convert/install.wim "Windows 11 ARM64_en-us 27842.1000 Canary" --compress=lzms
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
